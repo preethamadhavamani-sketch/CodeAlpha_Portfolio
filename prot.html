@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preetha.M · Grand portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f3f1eb;
+            /* warm light base – resembles luxury paper */
+            color: #1e1b1b;
+            font-family: "Inter", system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            font-weight: 300;
+            scroll-behavior: smooth;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc0IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wMjUiIC8+PC9zdmc+');
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.3;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Playfair Display", serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 2px;
+            background: #b79e7b;
+        }
+
+
+        header {
+            background: linear-gradient(135deg, #1b1f2e 0%, #2b3a3a 100%);
+            color: #ede7dd;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            line-height: 1.1;
+        }
+
+        header p {
+            font-size: 1.6rem;
+            margin-top: 0.75rem;
+            font-weight: 200;
+            color: #e3d9cc;
+            letter-spacing: 2px;
+            word-spacing: 6px;
+        }
+
+        header p i {
+            margin: 0 8px;
+            color: #c5ad88;
+            font-size: 1.3rem;
+        }
+
+
+        section {
+            max-width: 1300px;
+            margin: 0 auto 5rem;
+            padding: 1.5rem 2.5rem;
+        }
+
+
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5rem;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            padding: 3rem 4rem;
+            border-radius: 48px 12px 48px 12px;
+            box-shadow: 0 30px 40px -20px rgba(0, 0, 0, 0.2), inset 0 1px 3px rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        .about img {
+            width: 240px;
+            height: 280px;
+            border-radius: 30% 70% 70% 30% / 30% 40% 60% 70%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.25), 0 0 0 2px #dac09a inset;
+            transition: 0.4s ease;
+        }
+
+        .about img:hover {
+            transform: scale(1.02) rotate(1deg);
+            border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%;
+        }
+
+        .about>div {
+            flex: 1;
+        }
+
+        .about h2 {
+            margin-top: 0;
+            font-size: 2.8rem;
+        }
+
+        .about p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: #2f2a24;
+            line-height: 1.8;
+            border-left: 3px solid #b79e7b;
+            padding-left: 2rem;
+            margin-top: 1.2rem;
+        }
+
+
+        .skills {
+            background: transparent;
+            padding: 1.5rem 0;
+        }
+
+        .skills ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            list-style: none;
+        }
+
+        .skills li {
+            background: #2d2a26;
+            color: #f2ebe1;
+            padding: 0.8rem 2.2rem;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 15px -8px rgba(0, 0, 0, 0.3);
+            border: 1px solid #5f574e;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills li i {
+            color: #cfb38c;
+            font-size: 1.7rem;
+        }
+
+        .skills li:hover {
+            background: #3d3730;
+            transform: translateY(-4px);
+            border-color: #b79e7b;
+        }
+
+
+        .projects {
+            text-align: left;
+        }
+
+        .project-card {
+            background: #ffffffd9;
+            backdrop-filter: blur(8px);
+            padding: 2.8rem 3rem;
+            margin: 2.8rem 0;
+            border-radius: 40px 12px 40px 12px;
+            box-shadow: 0 30px 30px -15px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.7) inset;
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+            border-left: 8px solid #a38560;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02) translateY(-6px);
+            box-shadow: 0 40px 40px -15px rgba(78, 55, 30, 0.3);
+            border-left-width: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            color: #1e1b17;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .project-card h3 i {
+            color: #b28b5a;
+            font-size: 2.2rem;
+        }
+
+        .project-card p {
+            font-size: 1.25rem;
+            color: #3b352e;
+            max-width: 75%;
+            font-weight: 300;
+        }
+
+        .project-card:after {
+            content: "✦  PREMIUM  ✦";
+            position: absolute;
+            bottom: 15px;
+            right: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: #bb9f7b;
+            opacity: 0.4;
+            font-weight: 400;
+        }
+
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(145deg, #ece5d8, #f5efe7);
+            border-radius: 120px 20px 120px 20px;
+            padding: 4rem 2rem;
+            box-shadow: 0 25px 40px -20px #594f42;
+            border: 1px solid #fff;
+        }
+
+        .contact h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+        }
+
+        .contact p {
+            font-size: 1.6rem;
+            margin: 1.5rem 0;
+            font-weight: 280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .contact i {
+            color: #826b47;
+            font-size: 2.2rem;
+            width: 2.8rem;
+        }
+
+
+        footer {
+            background: #1a1815;
+            color: #ddd2c4;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            border-top: 1px solid #5f5242;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 800px) {
+            header h1 {
+                font-size: 3.5rem;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .about p {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .skills ul {
+                justify-content: center;
+            }
+
+            .project-card p {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Preetha M</h1>
+        <p><i class="fas fa-code"></i> Web Developer <i class="fas fa-circle"
+                style="font-size: 0.4rem; vertical-align: middle; color: #b99d77;"></i> Student <i
+                class="fas fa-pen-nib"></i></p>
+        <div style="margin-top: 2rem; font-size: 1.2rem; font-weight: 200; letter-spacing: 6px;">✦ CREATE ✦ INNOVATE ✦
+            INSPIRE ✦</div>
+    </header>
+
+    <section class="about">
+        <img src="preetha1.jpeg" alt="Preetha M portrait">
+        <div>
+            <h2>About Me</h2>
+            <p>I am a passionate college student interested in Web Development and UI/UX Designing. I love building
+                creative projects and solving real-world problems using technology. Every line of code is a brushstroke
+                towards a more connected world.</p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li><i class="fab fa-html5"></i> HTML & CSS</li>
+            <li><i class="fab fa-js"></i> JavaScript</li>
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fab fa-c"></i> C Programming</li>
+
+        </ul>
+        <p style="margin-top: 2.2rem; font-style: italic; color: #6b5f51;"><i class="fas fa-sparkles"
+                style="margin-right: 10px;"></i>continuously exploring advanced UI/UX & AI</p>
+    </section>
+
+    <section class="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <h3><i class="fas fa-dna"></i> AI Protein Deficiency Detector</h3>
+            <p>Deep learning model that predicts protein deficits from nutritional patterns — blend of bioinformatics
+                and accessible health tech.</p>
+        </div>
+        <div class="project-card">
+            <h3><i class="fas fa-store"></i> Nila Soru cafe</h3>
+            <p>Nila Soru is a single-page restaurant website built for an authentic Tamil cafe. It features a luxurious
+                dark-gold
+                aesthetic with animated glitter particles, an interactive menu with a cart system, a brew recommendation
+                engine, table
+                reservation form, testimonials slider, and a gallery — all in a single HTML file with zero dependencies.
+            </p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p><i class="fas fa-envelope"></i> preethamadhavamani@gmail.com</p>
+        <p><i class="fas fa-phone-alt"></i> +91 73388 32800</p>
+        <p style="font-size: 1.2rem; margin-top: 2.5rem; opacity: 0.8; gap: 25px;">
+            <i class="fab fa-linkedin-in"></i> <i class="fab fa-github"></i>
+        </p>
+        <p style="font-size: 0.95rem; margin-top: 1.8rem; letter-spacing: 2px;">✨ available for freelance &
+            collaborations ✨</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Preetha M · all rights reserved</p>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #957b5f;">designed with intent · grand premium edition
+        </p>
+    </footer>
+    <div
+        style="position: fixed; bottom: 20px; right: 20px; opacity: 0.2; pointer-events: none; font-size: 2rem; rotate: -10deg;">
+        🜁</div>
+</body>
+
+</html>
