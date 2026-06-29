@@ -51,9 +51,11 @@ Google Fonts
 
 📌 Featured Projects
 
-AI Protein Deficiency Detector – A deep learning project focused on nutritional analysis.
+--AI Protein Deficiency Detector
 
-Nila Soru Café Website – A modern restaurant website featuring an interactive menu, reservation system, and premium UI.
+--Nila Soru Café Website 
+
+--Grocery Slot Allocation System 
 
 
 🎯 Career Objective
